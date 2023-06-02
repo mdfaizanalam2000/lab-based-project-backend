@@ -86,7 +86,7 @@ router.patch("/editUser", authenticate, async (req, res) => {
     const { name, email, phone, bloodGroup, gender, age, city } = req.body;
     try {
         const donor = await User.findOneAndUpdate({ email }, {
-            name, email, phone, bloodGroup, gender, age, city
+            name, phone, bloodGroup, gender, age, city
         });
         res.send(donor);
     } catch (error) {
